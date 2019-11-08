@@ -22,6 +22,11 @@ import org.springframework.web.servlet.view.UrlBasedViewResolver;
 //-- @EnableWebMvc   如果继承WebMvcConfigurationSupport ，就先注释掉这个标注
 public class AppConfig extends WebMvcConfigurationSupport{
 	@Bean
+	public String hello(){
+		return "hello";
+	}
+	
+	@Bean
 	public UrlBasedViewResolver setupViewResolver(){
 		UrlBasedViewResolver resolver = new UrlBasedViewResolver();
 		resolver.setPrefix("/WEB-INF/");//位置  指定jsp文件所放的父目录（在web-inf下的是受保护的，不可以直接访问）
